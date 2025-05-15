@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abstracts",
+  "info": {
+    "singularName": "abstract",
+    "pluralName": "abstracts",
+    "displayName": "abstract",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "regex": "^(?:(?:\\+?\\d{1,4}[-.\\s]?)?(?:\\(?\\d{3,4}\\)?[-.\\s]?)*\\d{3,4}[-.\\s]?\\d{3,4})$"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "PTI Staff/Lecturers",
+        "Industry/Others",
+        "Student"
+      ],
+      "required": true
+    },
+    "organisation": {
+      "type": "string"
+    },
+    "upload": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}
