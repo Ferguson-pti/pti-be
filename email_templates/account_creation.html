@@ -1,0 +1,93 @@
+<html lang="en">
+    <head>
+    <title>Payment Received for '{{ category }}' ticket to the ICHST 2025</title>
+    <style>
+        html{
+            width:100vw; overflow:hidden;
+            display:flex; flex-direction:column; align-items:center; justify-items:flex-start;
+        }
+
+        .main{
+            background-color: #ffffff; width:100%; overflow:hidden;
+            font-family: "Calibri Light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+        }
+
+        .container{
+            width:500px; overflow:hidden;
+        }   
+
+        .section{
+            padding: 16px 20px;
+        }
+
+        .heading {
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        .footer {
+            border-top: 1px solid gray;
+            padding:20px 10px; flex-wrap:wrap; text-wrap:wrap;
+        }
+
+        .hero {
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        p{
+          font-size:13px;
+        }
+
+        .footerp {
+            text-align: center;
+            color: #aaa;
+        }
+    </style>
+    
+    </head>
+    <body class="main">
+      <section class="container">
+        <section class="hero">
+          <h1 style="line-height: 1;">
+            Payment Received for '{{ category }}' ticket to the ICHST 2025
+          </h1>
+        </section>
+        <section class="section">
+          <p
+            as="h5"
+            :style="heading"
+          >
+            Hello {{ name }},
+            <br><br>
+            Your payment of {{ price }} for the '{{ category }}' ticket of the <strong>ICHST 2025</strong> has been confirmed and a
+            user account has been created for you.
+            <br>
+            Below are the details to the account,
+          </p>
+          <br/><br/>
+          <p>
+            <b>Email</b>
+            <span style="display: block;">{{ email }}</span>
+          </p>
+          <br/>
+          <p>
+            <b>Password</b>
+            <span style="display: block;">{{ password }}</span>
+          </p>
+        </section>
+        <br/>
+        <section class="footer">
+          <p class="footerp">
+            ICHST © 2025 | PTDF TOWERS, CENTRAL BUSINESS DISTRICT, ABUJA, NIGERIA. 
+            <br/> 
+            https://pti-906t.onrender.com
+          </p>
+        </section>
+    </section>
+    </body>
+  </html>
