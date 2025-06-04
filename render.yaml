@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: pti-be
+    env: node
+    region: frankfurt
+    plan: starter
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    disk:
+      name: pti-be-uploads
+      mountPath: /opt/render/project/src/public/uploads
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: ~20.12.1
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_HOST
+        sync: false
+      - key: DATABASE_PORT
+        fromDatabase:
+          name: pti-db
+          property: port
+      - key: DATABASE_NAME
+        fromDatabase:
+          name: pti-db
+          property: database
+      - key: DATABASE_USERNAME
+        fromDatabase:
+          name: pti-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: pti-db
+          property: password
+      - key: DATABASE_SSL
+        value: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: APP_KEYS
+        generateValue: true
+
+databases:
+  - name: pti-db
+    region: virginia
+    plan: basic-1gb
