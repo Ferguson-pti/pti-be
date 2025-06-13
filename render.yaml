@@ -5,8 +5,8 @@ services:
     region: frankfurt
     plan: starter
     branch: main
-    buildCommand: npm install && npm run build
-    startCommand: npm run start
+    buildCommand: yarn && yarn build
+    startCommand: yarn start
     disk:
       name: pti-be-uploads
       mountPath: /opt/render/project/src/public/uploads

@@ -34,7 +34,7 @@ export default {
         console.log(category, username, email, passcode, amountPaid)
 
         const formatted_template = email_template
-          .replace(/{{ category }}/g, category)
+          .replace('{{ type }}', category)
           .replace('{{ name }}', username)
           .replace('{{ price }}', amountPaid)
           .replace('{{ email }}', email)
