@@ -46,6 +46,10 @@ services:
         generateValue: true
       - key: APP_KEYS
         generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: TRANSFER_TOKEN_SALT
+        generateValue: true
 
 databases:
   - name: pti-db
