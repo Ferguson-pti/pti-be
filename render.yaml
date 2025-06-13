@@ -50,6 +50,8 @@ services:
         generateValue: true
       - key: TRANSFER_TOKEN_SALT
         generateValue: true
+      - key: RESEND_API_KEY
+        sync: false
 
 databases:
   - name: pti-db
