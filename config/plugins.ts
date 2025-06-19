@@ -6,8 +6,8 @@ export default ({ env }) => ({
                 apiKey: env('RESEND_API_KEY'), // Required
             },
             settings: {
-                defaultFrom: 'Rophi <rophi.chukwu@cyphercrescent.com>',
-                defaultReplyTo: 'Rophi <rophi.chukwu@cyphercrescent.com>',
+                defaultFrom: `${env('RESEND_NAME')} <${env('RESEND_EMAIL')}>`,
+                defaultReplyTo: `${env('RESEND_NAME')} <${env('RESEND_EMAIL')}>`,
             },
         }
     },

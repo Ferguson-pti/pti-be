@@ -42,8 +42,8 @@ export default {
 
         try {
           await strapi.plugins['email'].services.email.send({
-            to: 'chukwurophi@gmail.com',
-            from: 'Rophi <rophi.chukwu@cyphercrescent.com>',
+            to: email,
+            // from: already set in the config/plugins.ts file
             subject: 'Payment Received for ICHST ticket.',
             text: formatted_template,
             html: formatted_template,
