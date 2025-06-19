@@ -415,7 +415,7 @@ export interface ApiAbstractAbstract extends Struct.CollectionTypeSchema {
   };
   attributes: {
     category: Schema.Attribute.Enumeration<
-      ['PTI Staff/Lecturers', 'Industry/Others', 'Student']
+      ['Academia', 'Industry/Others', 'Student', 'International']
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
