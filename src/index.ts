@@ -40,12 +40,12 @@ export default {
           .replace('{{ email }}', email)
           .replace('{{ password }}', passcode)
 
+        console.log(formatted_template)
         try {
-          await strapi.plugin('email').service('email').send({
+          await strapi.plugins['email'].services.email.send({
             to: email,
             from: `ICHST 2025 <support@ichst.com>`,//already set in the config/plugins.ts file
             subject: 'Payment Received for ICHST ticket.',
-            text: formatted_template,
             html: formatted_template,
           })
         } catch (error) {
