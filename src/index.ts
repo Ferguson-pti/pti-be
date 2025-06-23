@@ -31,8 +31,8 @@ export default {
         //console.log(event.params.data)
         const { category, username, email, passcode, amountPaid } = event.params.data
 
-        console.log(category, username, email, passcode, amountPaid)
-        console.log(`${process.env.RESEND_NAME} <${process.env.RESEND_EMAIL}>`)
+        //console.log(category, username, email, passcode, amountPaid)
+        //console.log(`${process.env.RESEND_NAME} <${process.env.RESEND_EMAIL}>`)
         const formatted_template = email_template
           .replace(/{{ category }}/g, category)
           .replace('{{ name }}', username)
@@ -40,7 +40,7 @@ export default {
           .replace('{{ email }}', email)
           .replace('{{ password }}', passcode)
 
-        console.log(formatted_template)
+        //console.log(formatted_template)
         try {
           await strapi.plugins['email'].services.email.send({
             to: email,
