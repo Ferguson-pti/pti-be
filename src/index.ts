@@ -27,28 +27,29 @@ export default {
         
         const email_template = await readFile( join(__dirname, '..', '..', 'email_templates', 'account_creation.html' ), { encoding: 'utf-8' })
 
-        console.log(event)
-        console.log(event.params.data)
+        //console.log(event)
+        //console.log(event.params.data)
         const { category, username, email, passcode, amountPaid } = event.params.data
 
-        console.log(category, username, email, passcode, amountPaid)
-
+        //console.log(category, username, email, passcode, amountPaid)
+        //console.log(`${process.env.RESEND_NAME} <${process.env.RESEND_EMAIL}>`)
         const formatted_template = email_template
-          .replace('{{ type }}', category)
+          .replace(/{{ category }}/g, category)
           .replace('{{ name }}', username)
           .replace('{{ price }}', amountPaid)
           .replace('{{ email }}', email)
           .replace('{{ password }}', passcode)
 
+        //console.log(formatted_template)
         try {
           await strapi.plugins['email'].services.email.send({
-            to: 'chukwurophi@gmail.com',
-            from: 'Rophi <rophi.chukwu@cyphercrescent.com>',
+            to: email,
+            from: `ICHST 2025 <support@ichst.com>`,//already set in the config/plugins.ts file
             subject: 'Payment Received for ICHST ticket.',
-            text: formatted_template,
             html: formatted_template,
           })
         } catch (error) {
+          console.log(error)
           throw new Error(`Failed to send email: ${error.message}`);
         }
       },

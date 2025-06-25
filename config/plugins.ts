@@ -1,15 +1,15 @@
 export default ({ env }) => ({
     email: {
         config: {
-            provider: 'strapi-provider-email-resend',
+            provider: "strapi-provider-email-resend",
             providerOptions: {
-                apiKey: env('RESEND_API_KEY'), // Required
+                apiKey: env("RESEND_API_KEY"), // Required
             },
             settings: {
-                defaultFrom: 'Rophi <rophi.chukwu@cyphercrescent.com>',
-                defaultReplyTo: 'Rophi <rophi.chukwu@cyphercrescent.com>',
+                defaultFrom: `ICHST 2025 <support@ichst.com>`,
+                defaultReplyTo: `ICHST 2025 <support@ichst.com>`,
             },
-        }
+        },
     },
     "users-permissions": {
         config: {
