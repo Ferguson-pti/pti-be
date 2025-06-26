@@ -1,5 +1,5 @@
 import type { Core } from '@strapi/strapi';
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import { join } from 'path';
 
 export default {
@@ -25,7 +25,7 @@ export default {
 
         if (event.model.uid!=="plugin::users-permissions.user") return
         
-        const email_template = readFileSync( join(__dirname, '..', '..', 'email_templates', 'account_creation.html' ), { encoding: 'utf-8' })
+        const email_template = await readFile( join(__dirname, '..', '..', 'email_templates', 'account_creation.html' ), { encoding: 'utf-8' })
 
         //console.log(event)
         //console.log(event.params.data)
