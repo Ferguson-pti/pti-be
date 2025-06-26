@@ -46,7 +46,7 @@ export default {
             to: email,
             from: `ICHST 2025 <support@ichst.com>`,//already set in the config/plugins.ts file
             subject: 'Payment Received for ICHST ticket.',
-            html: 'Just a string'//formatted_template,
+            html: formatted_template,
           })
         } catch (error) {
           console.log(error)
