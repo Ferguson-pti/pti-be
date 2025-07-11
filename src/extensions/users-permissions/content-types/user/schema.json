@@ -97,6 +97,17 @@
     "passcode": {
       "type": "string",
       "required": false
+    },
+    "title": {
+      "type": "enumeration",
+      "enum": [
+        "Mr",
+        "Mrs",
+        "Dr",
+        "Engr",
+        "Prof"
+      ],
+      "required": true
     }
   }
 }

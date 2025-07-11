@@ -29,12 +29,13 @@ export default {
 
         //console.log(event)
         //console.log(event.params.data)
-        const { category, username, email, passcode, amountPaid } = event.params.data
+        const { title, category, username, email, passcode, amountPaid } = event.params.data
 
         //console.log(category, username, email, passcode, amountPaid)
         //console.log(`${process.env.RESEND_NAME} <${process.env.RESEND_EMAIL}>`)
         const formatted_template = email_template
           .replace(/{{ category }}/g, category)
+          .replace('{{ title }}', title)
           .replace('{{ name }}', username)
           .replace('{{ price }}', amountPaid)
           .replace('{{ email }}', email)

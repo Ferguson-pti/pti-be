@@ -15,6 +15,7 @@ export default ({ env }) => ({
         config: {
             register: {
                 allowedFields: [
+                    "title",
                     "phone",
                     "affiliation",
                     "nationality",
