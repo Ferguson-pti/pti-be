@@ -75,7 +75,7 @@
     },
     "affiliation": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "nationality": {
       "type": "string"
@@ -108,6 +108,9 @@
         "Prof"
       ],
       "required": true
+    },
+    "jobTitle": {
+      "type": "string"
     }
   }
 }
