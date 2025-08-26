@@ -18,6 +18,7 @@ export default ({ env }) => ({
                     "title",
                     "phone",
                     "affiliation",
+                    "jobTitle",
                     "nationality",
                     "category",
                     "passcode",

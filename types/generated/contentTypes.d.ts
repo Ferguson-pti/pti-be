@@ -1062,7 +1062,7 @@ export interface PluginUsersPermissionsUser
     draftAndPublish: false;
   };
   attributes: {
-    affiliation: Schema.Attribute.String & Schema.Attribute.Required;
+    affiliation: Schema.Attribute.String;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     category: Schema.Attribute.Enumeration<
       ['Academia', 'Industry-Others', 'Students', 'International']
@@ -1078,6 +1078,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    jobTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
