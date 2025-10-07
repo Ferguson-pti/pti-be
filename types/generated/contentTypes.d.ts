@@ -1087,7 +1087,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.Private;
     nationality: Schema.Attribute.String;
     paidAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    passcode: Schema.Attribute.String;
+    passcode: Schema.Attribute.String & Schema.Attribute.Private;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{

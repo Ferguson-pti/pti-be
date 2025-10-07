@@ -96,7 +96,8 @@
     },
     "passcode": {
       "type": "string",
-      "required": false
+      "required": false,
+      "private": true
     },
     "title": {
       "type": "enumeration",
