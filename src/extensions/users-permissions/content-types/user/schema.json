@@ -112,6 +112,10 @@
     },
     "jobTitle": {
       "type": "string"
+    },
+    "checkedIn": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
